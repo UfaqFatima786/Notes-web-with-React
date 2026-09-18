@@ -7,7 +7,6 @@ const App = () => {
   const [post, setPost] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
 
-  // Add / Update Post
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -38,14 +37,12 @@ const App = () => {
     setDesc("");
   }
 
-  // Edit Post
   function handleEdit(index) {
     setTitle(post[index].title);
     setDesc(post[index].desc);
     setEditIndex(index);
   }
 
-  // Delete Post
   function handleDelete(index) {
     const updatedPosts = post.filter((_, i) => i !== index);
 
@@ -58,7 +55,6 @@ const App = () => {
     }
   }
 
-  // Cancel Edit
   function handleCancel() {
     setEditIndex(null);
     setTitle("");
@@ -70,12 +66,12 @@ const App = () => {
 
       <div className="mx-auto max-w-7xl">
 
-        {/* ================= HEADER ================= */}
+        { }
 
         <div className="mb-10 text-center">
 
           <div className="mb-4 inline-flex items-center rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300">
-            ✨ Simple Post Manager
+            ✨ Simple Notes Manager
           </div>
 
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
@@ -91,41 +87,26 @@ const App = () => {
           </p>
 
         </div>
-
-
-        {/* ================= MAIN CONTENT ================= */}
+        { }
 
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
-
-
-          {/* ================= FORM ================= */}
-
+          { }
           <div className="w-full lg:w-[35%]">
-
             <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl sm:p-7 lg:sticky lg:top-8">
-
               {/* Form Icon */}
-
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br from-blue-500 to-purple-600 text-2xl shadow-lg shadow-blue-500/20">
                 ✍️
               </div>
-
-
-              {/* Form Heading */}
-
+              { }
               <h2 className="text-2xl font-bold text-white">
-                {editIndex !== null ? "Edit Post" : "Create Post"}
+                {editIndex !== null ? "Edit Notes" : "Create Notes"}
               </h2>
-
               <p className="mt-1 text-sm text-slate-400">
                 {editIndex !== null
                   ? "Update your post information."
                   : "Write something and share it."}
               </p>
-
-
-              {/* Form */}
-
+              { }
               <form
                 onSubmit={handleSubmit}
                 className="mt-7 flex flex-col gap-5"
@@ -136,7 +117,7 @@ const App = () => {
                 <div>
 
                   <label className="mb-2 block text-sm font-semibold text-slate-200">
-                    Post Title
+                    Note Title
                   </label>
 
                   <input
@@ -148,16 +129,11 @@ const App = () => {
                   />
 
                 </div>
-
-
-                {/* Description */}
-
+                { }
                 <div>
-
                   <label className="mb-2 block text-sm font-semibold text-slate-200">
                     Description
                   </label>
-
                   <textarea
                     rows="6"
                     placeholder="Write something..."
@@ -177,7 +153,7 @@ const App = () => {
                     type="submit"
                     className="flex-1 rounded-xl bg-linear-to-r from-blue-500 to-purple-600 px-5 py-3.5 font-bold text-white shadow-lg shadow-blue-500/20 transition duration-300 hover:-translate-y-0.5 hover:from-blue-600 hover:to-purple-700 hover:shadow-purple-500/30"
                   >
-                    {editIndex !== null ? "Update Post" : "Add Post"}
+                    {editIndex !== null ? "Update Note" : "Add Note"}
                   </button>
 
 
@@ -198,54 +174,35 @@ const App = () => {
             </div>
 
           </div>
-
-
-          {/* ================= POSTS ================= */}
-
+          { }
           <div className="w-full lg:w-[65%]">
-
-            {/* Posts Header */}
-
+            { }
             <div className="mb-6 flex items-center justify-between">
-
               <div>
                 <h2 className="text-3xl font-bold text-white">
-                  Posts
-                </h2>
+                  Notes                </h2>
 
                 <p className="mt-1 text-sm text-slate-400">
-                  Your created posts appear here.
+                  Your created notes appear here.
                 </p>
               </div>
-
-
               <div className="flex h-11 min-w-11 items-center justify-center rounded-full border border-blue-400/20 bg-blue-500/10 px-4 font-bold text-blue-300">
                 {post.length}
               </div>
 
             </div>
-
-
-            {/* Posts Grid */}
-
+            {}
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-
               {post.length === 0 ? (
-
-                /* Empty State */
-
                 <div className="rounded-3xl border border-white/10 bg-white/5 px-6 py-14 text-center shadow-xl backdrop-blur-xl sm:col-span-2">
-
                   <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-blue-500/20 to-purple-500/20 text-3xl">
                     📝
                   </div>
-
                   <h3 className="text-xl font-bold text-white">
-                    No Posts Yet
+                    No Notes Yet
                   </h3>
-
                   <p className="mt-2 text-sm text-slate-400">
-                    Create your first post from the form.
+                    Create your first note from the form.
                   </p>
 
                 </div>
@@ -294,7 +251,7 @@ const App = () => {
 
                       <button
                         onClick={() => handleEdit(ids)}
-                        className="flex-1 rounded-xl border border-blue-400/20 bg-blue-500/10 px-4 py-2.5 text-sm font-semibold text-blue-300 transition duration-300 hover:bg-blue-500 hover:text-white"
+                        className="flex-1 rounded-xl border border-jblue-400/20 bg-blue-500/10 px-4 py-2.5 text-sm font-semibold text-blue-300 transition duration-300 hover:bg-blue-500 hover:text-white"
                       >
                         ✏️ Edit
                       </button>
