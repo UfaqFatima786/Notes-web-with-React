@@ -203,11 +203,11 @@ const App = () => {
                     <h3 className="mb-3 break-words text-xl font-bold text-white">
                       {elem.title}
                     </h3>
-                    {/* Description */}
+                    { }
                     <p className="flex-1 break-words text-sm leading-7 text-slate-300">
                       {elem.desc}
                     </p>
-                    {/* Card Buttons */}
+                    { }
                     <div className="mt-6 flex gap-3 border-t border-white/10 pt-5">
                       <button
                         onClick={() => handleEdit(ids)}
